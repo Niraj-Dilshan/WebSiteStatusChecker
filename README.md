@@ -1,1 +1,3 @@
 FARM Stack - FastAPI, React, and MongoDB
+======================================
+This is a template for a full-stack web application using FastAPI, React, and MongoDB. It is based on the [FARM Stack](https://farmstack.org/), which is a full-stack web application architecture that uses FastAPI, React, MongoDB, and Docker. This template is designed to be a starting point for building a full-stack web application. It is not intended to be a production-ready application. It is intended to be a starting point for building a production-ready application.
