@@ -1,1 +1,1 @@
-# FramStack
+FARM Stack - FastAPI, React, and MongoDB
