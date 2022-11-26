@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 DB_URL = os.getenv("DB_URL")
 
-client = motor.motor_asyncio.AsyncIOMotorClient()
+client = motor.motor_asyncio.AsyncIOMotorClient(DB_URL)
 
 database = client.TodoList
 collection = database.todo
