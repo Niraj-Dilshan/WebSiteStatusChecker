@@ -1,9 +1,11 @@
 import motor.motor_asyncio
 from model import Todo
 import os
-dburl = os.environ.get("DB_URL")
+from dotenv import load_dotenv
+load_dotenv()
+DB_URL = os.getenv("DB_URL")
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://infinity:CTqe12HmAdmoyt1Q@cluster0.9u97i9w.mongodb.net/?retryWrites=true&w=majority:8000")
+client = motor.motor_asyncio.AsyncIOMotorClient()
 
 database = client.TodoList
 collection = database.todo
