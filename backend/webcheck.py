@@ -3,14 +3,13 @@ from urllib.request import urlopen
 from urllib.error import URLError
 from urllib.error import HTTPError
 from http import HTTPStatus
-
-from model import Status
  
 # get the status of a website
 def get_website_status(url):
     # handle connection errors
-    code = urlopen(url).getcode()
-    return code
+    request_response = requests.head(url)
+    status_code = request_response.status_code
+    return status_code
  
 # interpret an HTTP response code into a status
 def get_status(code):
