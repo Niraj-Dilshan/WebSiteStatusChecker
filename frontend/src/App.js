@@ -30,23 +30,23 @@ function App() {
 
   return (
     <div className="App list-group-item  justify-content-center align-items-center mx-auto" style={{"width":"400px", "backgroundColor":"white", "marginTop":"15px"}} >
-      <h1 className="card text-white bg-primary mb-1" styleName="max-width: 20rem;">WebSite Satus Checker</h1>
-      <h6 className="card text-white bg-primary mb-3">FASTAPI - React - MongoDB</h6>
-     <div className="card-body">
-      <h5 className="card text-white bg-dark mb-3">Add Your Website</h5>
-      <span className="card-text"> 
-        <input className="mb-2 form-control nameIn" onChange={event => setName(event.target.value)} placeholder='Name'/> 
-        <input className="mb-2 form-control urlIn" onChange={event => setUrl(event.target.value)}   placeholder='URL'/>
-        <input className="mb-2 form-control statusIn" onChange={event => setStatus(event.target.value)}   placeholder='Status'/>
-      <button className="btn btn-outline-primary mx-2 mb-3" style={{'borderRadius':'50px',"font-weight":"bold"}}  onClick={addStatusHandler}>Add Task</button>
-      </span>
-      <h5 className="card text-white bg-dark mb-3">Your Tasks</h5>
-      <div >
-      <StatusView statusList={statusList} />
-      </div>
-      </div>
-      <h6 className="card text-dark bg-warning py-1 mb-0" >Copyright 2022, All rights reserved &copy;</h6>
+    <h1 className="card text-white bg-primary mb-1" styleName="max-width: 20rem;">Website Status Checker</h1>
+    <h6 className="card text-white bg-primary mb-3">FASTAPI - React - MongoDB</h6>
+   <div className="card-body">
+    <h5 className="card text-white bg-dark mb-3">Add Website</h5>
+    <span className="card-text"> 
+      <input className="mb-2 form-control nameIn"  placeholder='Name'/> 
+      <input className="mb-2 form-control urlIn"   placeholder='Url'/>
+      <input className="mb-2 form-control statusIn"   placeholder='Status'/>
+    <button className="btn btn-outline-primary mx-2 mb-3" style={{'borderRadius':'50px',"font-weight":"bold"}} >Add Task</button>
+    </span>
+    <h5 className="card text-white bg-dark mb-3">Monitoring Websites</h5>
+    <div >
     </div>
+    <StatusView StatusList={statusList} />
+    </div>
+    <h6 className="card text-dark bg-warning py-1 mb-0" >Copyright 2022, All rights reserved &copy;</h6>
+  </div>
   );
 }
 

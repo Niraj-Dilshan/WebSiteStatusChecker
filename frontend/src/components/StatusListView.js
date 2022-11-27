@@ -1,4 +1,4 @@
-import StatusItem from './Todo'
+import StatusItem from './Status'
 
 export default function StatusView(props) {
     return (
