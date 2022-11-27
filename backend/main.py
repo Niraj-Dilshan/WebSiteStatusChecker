@@ -1,13 +1,13 @@
 from fastapi import FastAPI, HTTPException
 
-from model import Todo
+from model import Status
 
 from database import (
-    fetch_one_todo,
-    fetch_all_todos,
-    create_todo,
-    update_todo,
-    remove_todo,
+    fetch_one_status,
+    fetch_all_statuses,
+    create_status,
+    update_status,
+    remove_status,
 )
 
 # an HTTP-specific exception class  to generate exception information
@@ -32,37 +32,37 @@ app.add_middleware(
 
 @app.get("/")
 async def read_root():
-    return {"Hello": "World"}
+    return {"Welcome For INFINITE": "Status"}
 
-@app.get("/api/todo")
-async def get_todo():
-    response = await fetch_all_todos()
+@app.get("/api/status")
+async def get_status():
+    response = await fetch_all_statuses()
     return response
 
-@app.get("/api/todo/{title}", response_model=Todo)
-async def get_todo_by_title(title):
-    response = await fetch_one_todo(title)
+@app.get("/api/status/{name}", response_model=Status)
+async def get_status_by_name(name):
+    response = await fetch_one_status(name)
     if response:
         return response
-    raise HTTPException(404, f"There is no todo with the title {title}")
+    raise HTTPException(404, f"There is no status with the name {name}")
 
-@app.post("/api/todo/", response_model=Todo)
-async def post_todo(todo: Todo):
-    response = await create_todo(todo.dict())
+@app.post("/api/status/", response_model=Status)
+async def post_status(status: Status):
+    response = await create_status(status.dict())
     if response:
         return response
     raise HTTPException(400, "Something went wrong")
 
-@app.put("/api/todo/{title}/", response_model=Todo)
-async def put_todo(title: str, desc: str):
-    response = await update_todo(title, desc)
+@app.put("/api/status/{name}/", response_model=Status)
+async def put_status(name: str, status: str):
+    response = await update_status(name, status)
     if response:
         return response
-    raise HTTPException(404, f"There is no todo with the title {title}")
+    raise HTTPException(404, f"There is no status with the name {name}")
 
-@app.delete("/api/todo/{title}")
-async def delete_todo(title):
-    response = await remove_todo(title)
+@app.delete("/api/status/{name}")
+async def delete_status(name):
+    response = await remove_status(name)
     if response:
-        return "Successfully deleted todo"
-    raise HTTPException(404, f"There is no todo with the title {title}")
+        return "Successfully deleted status"
+    raise HTTPException(404, f"There is no status with the name {name}")

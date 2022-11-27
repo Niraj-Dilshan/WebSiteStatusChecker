@@ -1,5 +1,5 @@
 import motor.motor_asyncio
-from model import Todo
+from model import Status
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -7,31 +7,31 @@ DB_URL = os.getenv("DB_URL")
 
 client = motor.motor_asyncio.AsyncIOMotorClient(DB_URL)
 
-database = client.TodoList
-collection = database.todo
+database = client.StatusList
+collection = database.status
 
-async def fetch_one_todo(title):
-    document = await collection.find_one({"title": title})
+async def fetch_one_status(name):
+    document = await collection.find_one({"name": name})
     return document
 
-async def fetch_all_todos():
-    todos = []
+async def fetch_all_statuses():
+    statuses = []
     cursor = collection.find({})
     async for document in cursor:
-        todos.append(Todo(**document))
-    return todos
+        statuses.append(Status(**document))
+    return statuses
 
-async def create_todo(todo):
-    document = todo
+async def create_status(status):
+    document = status
     result = await collection.insert_one(document)
     return document
 
 
-async def update_todo(title, desc):
-    await collection.update_one({"title": title}, {"$set": {"description": desc}})
-    document = await collection.find_one({"title": title})
+async def update_status(name, status):
+    await collection.update_one({"name": name}, {"$set": {"status": status}})
+    document = await collection.find_one({"name": name})
     return document
 
-async def remove_todo(title):
-    await collection.delete_one({"title": title})
+async def remove_status(name):
+    await collection.delete_one({"name": name})
     return True
