@@ -13,29 +13,29 @@ This is a template for a full-stack web application using FastAPI, React, and Mo
 ### Then lets setup the backend first
 ``` cd backend ```
 
-###In Ubuntu 
+### In Ubuntu 
 
-###install python virtual environment
+### install python virtual environment
 ``` sudo apt install python3-virtualenv ```
 
-###Then create python virtual environment
+### Then create python virtual environment
 ``` virtualenv virtualenv_name ```
 
-###After that activate environment
+### After that activate environment
 ``` source virtualenv_name/bin/activate ```
 
 ### install dependencies
 ``` pip install -r requirements.txt ```
 
-###In Windows
+### In Windows
 
-###install python virtual environment
+### Install python virtual environment
 ``` pip install virtualenv ```
 
-###Then create python virtual environment
+### Then create python virtual environment
 ``` virtualenv virtualenv_name ```
 
-###After that activate environment
+### After that activate environment
 ``` virtualenv_name\Scripts\activate ```
 
 ### install dependencies
