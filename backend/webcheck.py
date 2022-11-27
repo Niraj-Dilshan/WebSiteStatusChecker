@@ -9,7 +9,7 @@ from model import Status
 # get the status of a website
 def get_website_status(url):
     # handle connection errors
-    code = urlopen("https://www.stackoverflow.com").getcode()
+    code = urlopen(url).getcode()
     return code
  
 # interpret an HTTP response code into a status
