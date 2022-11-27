@@ -39,8 +39,10 @@ function App() {
               <span className="card-text"> 
                 <input className="mb-2 form-control nameIn" onChange={event => setName(event.target.value)} placeholder='Name'/> 
                 <input className="mb-2 form-control urlIn"  onChange={event => setUrl(event.target.value)} placeholder='Url'/>
-                <input className="mb-2 form-control statusIn" placeholder='Status' value="Checking" disabled/>
-              <button className="btn btn-primary mx-2 mb-3" style={{'borderRadius':'50px',"font-weight":"bold"}} onClick={addStatusHandler}>Add Website</button>
+                <button className="btn btn-primary mx-2 mb-3" style={{'borderRadius':'50px',"font-weight":"bold"}} onClick={addStatusHandler}>Add Website</button>
+                <p className='text-danger'>*Status Of WebSites Will Check Every 5 minutes Automatically
+                  <img src="https://infini7y.tk/wp-content/uploads/2022/11/temp.png" alt="temp" style={{'width':'100%'}}/>
+                </p>
               </span>
             </div>
           </div>
