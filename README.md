@@ -8,7 +8,7 @@ This is a template for a full-stack web application using FastAPI, React, and Mo
 ``` git clone https://github.com/Niraj-Dilshan/WebSiteStatusChecker.git ```
 
 ### Then change your working directory to the project file
-``` cd WebSiteStatusChecker ```
+    ``` cd WebSiteStatusChecker ```
 
 ### Then lets setup the backend first
 ``` cd backend ```
