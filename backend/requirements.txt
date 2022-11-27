@@ -4,3 +4,6 @@ uvicorn == 0.14.0
 
 motor == 2.4.0
 
+schedule
+
+requests
