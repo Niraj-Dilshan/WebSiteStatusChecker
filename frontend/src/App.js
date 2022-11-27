@@ -4,16 +4,13 @@ import StatusView from './components/StatusListView';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
 
   const [statusList, setStatusList] = useState([{}])
   const [name, setName]= useState('') 
   const [url, setUrl] = useState('')
   const status = "Checking"
-  
     
-
   // Read all status
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/status')
