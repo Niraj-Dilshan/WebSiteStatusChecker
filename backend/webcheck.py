@@ -1,3 +1,5 @@
+import schedule
+import time
 import requests
 from http import HTTPStatus
 
@@ -49,4 +51,9 @@ def get_websites():
     url = [website['url'] for website in response.json()]
     return url , name
 
-check_status_urls(get_websites()[0], get_websites()[1])
+# schedule the job to run every 5 minutes
+schedule.every(5).minutes.do(check_status_urls,get_websites()[0],get_websites()[1])
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
