@@ -13,39 +13,39 @@ This is a template for a full-stack web application using FastAPI, React, and Mo
 ### Then lets setup the backend first
 ``` cd backend ```
 
-  ###In Ubuntu 
+###In Ubuntu 
 
-    ###install python virtual environment
-    ``` sudo apt install python3-virtualenv ```
+###install python virtual environment
+``` sudo apt install python3-virtualenv ```
 
-    ###Then create python virtual environment
-    ``` virtualenv virtualenv_name ```
+###Then create python virtual environment
+``` virtualenv virtualenv_name ```
 
-    ###After that activate environment
-    ``` source virtualenv_name/bin/activate ```
+###After that activate environment
+``` source virtualenv_name/bin/activate ```
 
-    ### install dependencies
-    ``` pip install -r requirements.txt ```
-  
-  ###In Windows
-  
-    ###install python virtual environment
-    ``` pip install virtualenv ```
+### install dependencies
+``` pip install -r requirements.txt ```
 
-    ###Then create python virtual environment
-    ``` virtualenv virtualenv_name ```
+###In Windows
 
-    ###After that activate environment
-    ``` virtualenv_name\Scripts\activate ```
+###install python virtual environment
+``` pip install virtualenv ```
 
-    ### install dependencies
-    ``` pip install -r requirements.txt ```
+###Then create python virtual environment
+``` virtualenv virtualenv_name ```
 
-  ### After that add .env file to the /backend, make sure you add your mongo db connection link
-    ```MONGO_URI="mongodb+srv://username:password@cluster0.gwqfihf.mongodb.net/?retryWrites=true&w=majority"```
+###After that activate environment
+``` virtualenv_name\Scripts\activate ```
 
-  ### startup the FAST-API backend
-  ``` uvicorn main:app --reload ```
+### install dependencies
+``` pip install -r requirements.txt ```
+
+### After that add .env file to the /backend, make sure you add your mongo db connection link
+``` MONGO_URI="mongodb+srv://username:password@cluster0.gwqfihf.mongodb.net/?retryWrites=true&w=majority" ```
+
+### startup the FAST-API backend
+``` uvicorn main:app --reload ```
   
 ---
 
