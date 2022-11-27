@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import './App.css';
 import TodoView from './components/TodoListView';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -25,7 +25,8 @@ function App() {
   const addTodoHandler = () => {
     axios.post('http://localhost:8000/api/todo/', { 'title': title, 'description': desc })
       .then(res => console.log(res))
-};
+    window.location.reload(false);
+  };
 
   return (
     <div className="App list-group-item  justify-content-center align-items-center mx-auto" style={{"width":"400px", "backgroundColor":"white", "marginTop":"15px"}} >
@@ -43,7 +44,7 @@ function App() {
       <TodoView todoList={todoList} />
       </div>
       </div>
-      <h6 className="card text-dark bg-warning py-1 mb-0" >Copyright 2021, All rights reserved &copy;</h6>
+      <h6 className="card text-dark bg-warning py-1 mb-0" >Copyright 2022, All rights reserved &copy;</h6>
     </div>
   );
 }
