@@ -7,3 +7,5 @@ motor == 2.4.0
 schedule
 
 requests
+
+dotenv
