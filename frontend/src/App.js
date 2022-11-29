@@ -17,7 +17,7 @@ function App() {
       .then(res => {
         setStatusList(res.data)
       })
-  });
+  },60000);
 
   // Post a status
   const addStatusHandler = () => {
